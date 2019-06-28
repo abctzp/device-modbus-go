@@ -53,4 +53,19 @@ LogLevel = "INFO"
   RemoveCmd = ""
   RemoveCmdArgs = ""
   ProfilesDir = ""
+
+[[DeviceList]]
+  Name = "Modbus TCP test device"
+  Profile = "Test.Device.Modbus.Profile"
+  Description = "This device is a product for monitoring and controlling digital inputs and outputs over a LAN."
+  labels = [ "Air conditioner","modbus TCP" ]
+  [DeviceList.Protocols]
+    [DeviceList.Protocols.modbus-tcp]
+       Address = "10.22.170.36"
+       Port = "502"
+       UnitID = "2"
+  [[DeviceList.AutoEvents]]
+    Frequency = "20s"
+    OnChange = false
+    Resource = "HVACValues"
   
